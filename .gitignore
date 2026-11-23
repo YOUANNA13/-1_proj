@@ -1,0 +1,33 @@
+# Datasets stay out of git (too large; get them from their sources)
+CHV_dataset/
+OriginalDataset/
+datasets/
+
+# Training outputs and weights
+runs/
+*.pt
+*.onnx
+*.engine
+wandb/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Node
+node_modules/
+dist/
+
+# OS / editor
+.DS_Store
+desktop.ini
+Thumbs.db
+.vscode/
+.idea/
+
+# Local DB
+*.sqlite
+*.db

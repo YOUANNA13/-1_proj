@@ -1,0 +1,17 @@
+OriginalDataset/IMG (2).JPG
+OriginalDataset/IMG (40).JPG
+OriginalDataset/IMG (41).JPG
+OriginalDataset/IMG (51).JPG
+OriginalDataset/IMG (57).JPG
+OriginalDataset/IMG (72).JPG
+OriginalDataset/IMG (87).JPG
+OriginalDataset/IMG (88).JPG
+OriginalDataset/IMG (108).JPG
+OriginalDataset/IMG (115).JPG
+OriginalDataset/IMG (144).JPG
+OriginalDataset/IMG (147).JPG
+OriginalDataset/IMG (155).JPG
+OriginalDataset/IMG (158).JPG
+OriginalDataset/IMG (162).JPG
+OriginalDataset/IMG (165).JPG
+OriginalDataset/IMG (171).JPG

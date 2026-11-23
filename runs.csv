@@ -1,0 +1,1 @@
+run_id,date,owner,team,git_commit,dataset,split_files,model,weights_init,imgsz,epochs,batch,optimizer,lr0,seed,hardware,eval_split,precision,recall,f1,map50,map50_95,fps,params_m,gflops,weights_link,notes
