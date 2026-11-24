@@ -54,3 +54,6 @@ To be expanded into the one-page annotation guide before labelling starts:
 - Label every visible person, even if partly visible. *(to confirm)*
 - Helmets carried, not worn: label as a helmet of its colour. *(to confirm)*
 - Faded colours: pick the closest of the 4 colours. *(to confirm)*
+- **Orange helmets → `red_helmet` (ID 3).** Decided (D-016).
+- Heads with no helmet (bare head, cap, cloth wrap) get **no** helmet box.
+- Yellow/orange objects that are not helmets (tools, gloves, paint marks on walls) get no box.

@@ -1,0 +1,43 @@
+# Egyptian images removed as near-duplicates (decision D-015).
+# Each line: removed image -> kept image of the same scene. Raw files are NOT deleted.
+# Found with perceptual hashes (aHash/dHash) and checked by eye.
+IMG (2).JPG -> IMG (1).JPG
+IMG (4).JPG -> IMG (3).JPG
+IMG (6).JPG -> IMG (5).JPG
+IMG (8).JPG -> IMG (7).JPG
+IMG (21).JPG -> IMG (20).JPG
+IMG (38).JPG -> IMG (37).JPG
+IMG (39).JPG -> IMG (37).JPG
+IMG (43).JPG -> IMG (42).JPG
+IMG (46).JPG -> IMG (45).JPG
+IMG (48).JPG -> IMG (47).JPG
+IMG (50).JPG -> IMG (49).JPG
+IMG (57).JPG -> IMG (56).JPG
+IMG (70).JPG -> IMG (60).JPG
+IMG (74).JPG -> IMG (62).JPG
+IMG (75).JPG -> IMG (62).JPG
+IMG (81).JPG -> IMG (63).JPG
+IMG (82).JPG -> IMG (64).JPG
+IMG (76).JPG -> IMG (71).JPG
+IMG (78).JPG -> IMG (77).JPG
+IMG (90).JPG -> IMG (89).JPG
+IMG (105).JPG -> IMG (104).JPG
+IMG (110).JPG -> IMG (109).JPG
+IMG (115).JPG -> IMG (114).JPG
+IMG (117).JPG -> IMG (116).JPG
+IMG (119).JPG -> IMG (118).JPG
+IMG (122).JPG -> IMG (121).JPG
+IMG (125).JPG -> IMG (124).JPG
+IMG (130).JPG -> IMG (124).JPG
+IMG (131).JPG -> IMG (124).JPG
+IMG (141).JPG -> IMG (140).JPG
+IMG (149).JPG -> IMG (148).JPG
+IMG (151).JPG -> IMG (150).JPG
+IMG (153).JPG -> IMG (152).JPG
+IMG (161).JPG -> IMG (160).JPG
+IMG (163).JPG -> IMG (162).JPG
+IMG (165).JPG -> IMG (164).JPG
+IMG (167).JPG -> IMG (166).JPG
+IMG (169).JPG -> IMG (168).JPG
+IMG (171).JPG -> IMG (170).JPG
+IMG (173).JPG -> IMG (172).JPG

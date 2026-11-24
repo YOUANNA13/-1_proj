@@ -37,7 +37,12 @@ Egyptian images come from the paper's repo: https://github.com/elnaqieb/PPE_Dete
 | Dataset | train | valid | test | Source |
 |---|---|---|---|---|
 | CHV | 1064 | 133 | 133 | Official split, copied verbatim. Paths are relative to `CHV_dataset/` |
-| Egyptian | 138 | 17 | 18 | `python -I scripts/make_splits.py`, seed 42. Paths are relative to the repo root |
+| Egyptian | 106 | 13 | 14 | `python -I scripts/make_splits.py`, seed 42, 40 near-duplicates left out (`splits/egy_removed_duplicates.txt`). Paths are relative to the repo root |
+
+Egyptian labels: `annotations/egy/` (1394 boxes, reviewed; see `annotations/README.md`).
+Build the YOLO folders with `python -I scripts/prepare_yolo_dirs.py` → `datasets/` (git-ignored),
+then check them with `python -I scripts/check_dataset.py`.
+Training configs: `configs/chv.yaml` (CHV only), `configs/chv_egy.yaml` (CHV + Egyptian), `configs/egy.yaml` (Egyptian only).
 
 ## Layout
 

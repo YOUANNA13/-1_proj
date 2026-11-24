@@ -1,5 +1,6 @@
 """Kickoff split for the Egyptian images: 80% train / 10% valid / 10% test, fixed seed.
 Same 80/10/10 layout as the official CHV split.
+Near-duplicate images listed in splits/egy_removed_duplicates.txt are left out (D-015).
 
 Run from the project root:
     python -I scripts/make_splits.py
@@ -30,11 +31,23 @@ def natural_key(p: Path):
     return [int(t) if t.isdigit() else t.lower() for t in re.split(r"(\d+)", p.name)]
 
 
+def removed_duplicates(name: str, out_dir: Path):
+    """Image names listed on the left of '->' in splits/<name>_removed_duplicates.txt (D-015)."""
+    f = out_dir / f"{name}_removed_duplicates.txt"
+    if not f.exists():
+        return set()
+    lines = [l for l in f.read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")]
+    return {l.split("->")[0].strip() for l in lines}
+
+
 def split(name: str, folder: Path, out_dir: Path):
+    skip = removed_duplicates(name, out_dir)
     images = sorted(
-        (p for p in folder.iterdir() if p.suffix.lower() in IMG_EXT),
+        (p for p in folder.iterdir() if p.suffix.lower() in IMG_EXT and p.name not in skip),
         key=natural_key,
     )
+    if skip:
+        print(f"{name}: skipped {len(skip)} near-duplicate images")
     rng = random.Random(SEED)
     shuffled = images[:]
     rng.shuffle(shuffled)

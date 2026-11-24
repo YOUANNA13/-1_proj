@@ -1,0 +1,12 @@
+# Egyptian images only (for EGY-test evaluation). Class IDs fixed by D-005.
+path: datasets/egy  # relative to the project root; run commands from there
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: person
+  1: vest
+  2: blue_helmet
+  3: red_helmet
+  4: white_helmet
+  5: yellow_helmet

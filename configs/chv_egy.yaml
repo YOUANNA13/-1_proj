@@ -1,0 +1,20 @@
+# CHV + Egyptian images combined (experiment B). Class IDs fixed by D-005.
+# Paths are relative to the project root; run commands from there.
+# Build the folders first: python -I scripts/prepare_yolo_dirs.py
+path: datasets
+train:
+  - chv/images/train
+  - egy/images/train
+val:
+  - chv/images/val
+  - egy/images/val
+test:
+  - chv/images/test
+  - egy/images/test
+names:
+  0: person
+  1: vest
+  2: blue_helmet
+  3: red_helmet
+  4: white_helmet
+  5: yellow_helmet

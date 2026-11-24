@@ -32,10 +32,11 @@ Format: `ID | Date | Decision | Why | Owner`
 - **Why:** it is the standard CHV benchmark split, it matches the paper's "80% training, 20% testing and validation", and it keeps our results comparable with other work.
 - **Owner:** Model Team
 
-### D-002 · 2026-11-23 · Egyptian images split 80/10/10, seed 42
-- **Decision:** the 173 Egyptian images are split at random with `seed = 42`: train 138 / valid 17 / test 18. Files: `splits/egy_{train,valid,test}.txt`, produced by `scripts/make_splits.py` (re-running gives the same lists).
+### D-002 · 2026-11-23 · Egyptian images split 80/10/10, seed 42 (updated by D-015)
+- **Decision:** the Egyptian images are split at random with `seed = 42`, 80/10/10. Files: `splits/egy_{train,valid,test}.txt`, produced by `scripts/make_splits.py` (re-running gives the same lists).
+- **Current counts (after D-015):** 133 images → train 106 / valid 13 / test 14. (The first version split all 173 images: 138 / 17 / 18.)
 - **Why:** same 80/10/10 layout as CHV. Random because we don't know which site each image came from.
-- **Note:** a test set of 18 images is small, so Egyptian test numbers will be noisy. Report this as a limitation.
+- **Note:** a test set of 14 images is small, so Egyptian test numbers will be noisy. Report this as a limitation.
 - **Owner:** Model Team
 
 ### D-003 · 2026-11-23 · Results reported per dataset
@@ -45,6 +46,7 @@ Format: `ID | Date | Decision | Why | Owner`
 
 ### D-004 · 2026-11-23 · We annotate the Egyptian images ourselves
 - **Decision:** the Egyptian images have no labels. We label them ourselves in YOLO format with the 6 class IDs from D-005. Process: pre-label with a CHV-trained model, then correct by hand, following a one-page annotation guide. Part of each person's work is spot-checked by someone else.
+- **Status (2026-11-24): done.** Pre-labels from a CHV-trained YOLOv8m, then a full correction pass: tiled search for far objects with two extra detectors, every candidate checked by eye, missing helmets/vests added per person, and a final pass over all 133 images. 1394 boxes. Labels live in `annotations/egy/` (single source of truth); process and counts in `annotations/README.md`. `scripts/check_dataset.py` passes.
 - **Why:** no labels are available.
 - **Owner:** Model Team (leads); work split across the team
 
@@ -87,6 +89,17 @@ Format: `ID | Date | Decision | Why | Owner`
 ### D-013 · 2026-11-23 · Shared run log
 - **Decision:** every training or evaluation run gets one row in `runs.csv` at the repo root, including the git commit and seed.
 - **Owner:** all teams (each team logs its own runs)
+
+### D-015 · 2026-11-23 · Near-duplicate Egyptian images removed
+- **Decision:** 40 of the 173 Egyptian images are near-duplicates (burst shots of the same scene) and are left out of the dataset; one image per scene is kept, so 133 remain. The list (removed → kept) is in `splits/egy_removed_duplicates.txt`. The raw files are not deleted.
+- **Why:** with a random split, 10 of the 18 test images had a copy in train/val, which would make Egyptian test results look better than they are.
+- **How found:** perceptual hashes (aHash/dHash), every group checked by eye. After removal, no pair of remaining images is close.
+- **Owner:** Model Team
+
+### D-016 · 2026-11-23 · Orange helmets are labelled `red_helmet`
+- **Decision:** orange helmets (common on Egyptian sites, no class of their own) are labelled `red_helmet` (ID 3).
+- **Why:** red is the closest of the 4 colours, and keeps the 6 class IDs unchanged.
+- **Owner:** Model Team
 
 ### D-014 · 2026-11-23 · Known limitation: reproduction will not be exact
 - **Decision:** we state openly that the paper's numbers cannot be reproduced exactly, because its evaluation set is unclear (see `docs/comparison_table.md`, "Inconsistencies in the paper").

@@ -1,0 +1,12 @@
+# CHV benchmark, official split (D-001). Class IDs fixed by D-005.
+path: datasets/chv  # relative to the project root; run commands from there
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: person
+  1: vest
+  2: blue_helmet
+  3: red_helmet
+  4: white_helmet
+  5: yellow_helmet
